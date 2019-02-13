@@ -29,7 +29,7 @@ namespace task1
                 else
                     for (int j = 2; j < a[i]; j++)
                         if (a[i] % j == 0) flag = true;     //если член массива не prime то вот тут он станет true
-                if (!flag) cnt++;                    //считаем колво у нас prime-ов
+                if (!flag) cnt++;                    //считаем кол-во у нас prime-ов
             }
 
             Console.WriteLine(cnt);
