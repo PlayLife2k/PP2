@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +11,15 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            string s = Console.ReadLine();
-            File.WriteAllText(@"C:\Users\ww\source\repos\week2\Task1\input.txt", s);
-            FileStream fs = new FileStream(@"C:\Users\ww\source\repos\week2\Task1\input.txt", FileMode.OpenOrCreate, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-            string str = sr.ReadLine();
-            sr.Close();
-            fs.Close();
-            int cnt=0;
-            for (int i = 0,j = str.Length-1; i < str.Length && j>=0; i++, j--)
+            string s = Console.ReadLine();// вводим строку s
+            File.WriteAllText(@"C:\Users\ww\source\repos\week2\Task1\input.txt", s); //создет файл и вписывает строку s
+            FileStream fs = new FileStream(@"C:\Users\ww\source\repos\week2\Task1\input.txt", FileMode.OpenOrCreate, FileAccess.Read);//Класс FileStream представляет возможности по считыванию из файла и записи в файл. Тут мы открываем файл в режими чтения
+            StreamReader sr = new StreamReader(fs);//переводи FileStream на понятный нам язык
+            string str = sr.ReadLine();//Выполняет чтение строки символов из текущего потока и возвращает в виде строки
+            sr.Close();//закрываем StreamReader
+            fs.Close();//закрываем FileStream
+            int cnt=0;//создаем счетчик
+            for (int i = 0,j = str.Length-1; i < str.Length && j>=0; i++, j--)//создаем цикл для проверки полиндромов
             {
                 if (str[i] == str[j]) cnt++;
             }
