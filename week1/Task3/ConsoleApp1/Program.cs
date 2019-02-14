@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +10,10 @@ namespace task3
     {
         static void Main(string[] args)
         {
-            int n;
+            int n;//Создал переменную n
             n = Convert.ToInt32(Console.ReadLine());  //Размер массива
 
-            int[] a = new int[n];           //Сохдали массив
+            int[] a = new int[n];           //Содали массив
             for (int i = 0; i < n; i++)
             {
                 a[i] = Convert.ToInt32(Console.ReadLine());           //В консоли вводим элементы массива
@@ -29,7 +29,7 @@ namespace task3
 
             for (int i = 0; i < n; i++)
             {
-                Console.Write(a[i] + " " + a[i] + " ");         //Диблировали
+                Console.Write(a[i] + " " + a[i] + " ");         //Дублировали
             }
 
         }
