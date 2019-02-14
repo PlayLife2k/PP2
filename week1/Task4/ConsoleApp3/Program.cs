@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +10,14 @@ namespace task4
     {
         static void Main(string[] args)
         {
-            int b;
-            b = int.Parse(Console.ReadLine());
-            int[] a = new int[b];
-            for (int i = 0; i <= b; i++)
+            int b;//переменная b
+            b = int.Parse(Console.ReadLine());//вводим вручную b в консоли , parse чтобы b приняло математическое значние
+            int[] a = new int[b];// создаем массив и обзываем его буквой a , и даем ему размер переменной b которую мы вводим в консоли :D
+            for (int i = 0; i <= b; i++)//
             {
                 for (int t = 1; t <= i; t++)
                     Console.Write("[*]");
-                Console.WriteLine();
+                Console.WriteLine();//используем WriteLine чтобы значение перешло вниз
             }
         }
     }
