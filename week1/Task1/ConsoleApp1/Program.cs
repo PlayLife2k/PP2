@@ -8,42 +8,30 @@ namespace task1
 {
     class Program
     {
+        public static bool Prime(int element)//метод для поиска простых чисел
+        {
+            if (element == 0 || element == 1) return false;
+            for(int i =2 ;i <= Math.Sqrt(element); ++i)
+            {
+                if (element % i == 0) return false;
+            }
+            return true;//возвращает тру если число простое
+        }
+
         static void Main(string[] args)
         {
-            int n;
-            n = Convert.ToInt32(Console.ReadLine());
-            int[] a = new int[n];
-
-            for (int i = 0; i < n; i++)
+            int arsz = Convert.ToInt32(Console.ReadLine());//объявляем размер массива
+            string[] arr = Console.ReadLine().Split();//Элементы массива
+            int cnt = 0;//счетчик простых чисел
+            for (int i = 0; i < arsz; i++)
             {
-                a[i] = Convert.ToInt32(Console.ReadLine());
+                if (Prime(int.Parse(arr[i]))) cnt++;
             }
-            int cnt = 0;
-            bool flag = false;        //falg=можно представить что сейчас каждый член массива держит свой флаг(false)
-                                      // и если он не prime то его флаг станет true , и мы выведем те члены массива
-                                      //у кторых флаг false
-            for (int i = 0; i < n; i++)
+            Console.WriteLine(cnt);//выводим колво простых чисел
+            for (int i = 0; i < arsz; i++)
             {
-                flag = false;
-                if (a[i] <= 1) continue;    //если член массива меньше или равен еднице то их не расматриваем
-                else
-                    for (int j = 2; j < a[i]; j++)
-                        if (a[i] % j == 0) flag = true;     //если член массива не prime то вот тут он станет true
-                if (!flag) cnt++;                    //считаем кол-во у нас prime-ов
+                if (Prime(int.Parse(arr[i]))) Console.Write(arr[i] + " ");//выводим простые числа
             }
-
-            Console.WriteLine(cnt);
-
-            for (int i = 0; i < n; i++)
-            {
-                flag = false;
-                if (a[i] <= 1) continue;
-                else
-                    for (int j = 2; j < a[i]; j++)
-                        if (a[i] % j == 0) flag = true;
-                if (!flag) Console.Write(a[i] + " ");     //выводим все prime цифры
-            }
-            Console.ReadKey();
         }
     }
 }
